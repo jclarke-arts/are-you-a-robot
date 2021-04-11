@@ -13,20 +13,25 @@ This `README` is split into three sections, you can jump to whichever is relevan
 
 ## Downloading the project
 
-### Option 1: Using Github for collaborative coding (Recommended)
+### Option 1: Using GitHub for collaborative coding (Recommended)
 
-Github is a free hosting provider used for software development and distributed 'version control' of files and code. If you would like to use github to track changes in your project you can follow these steps, or skip to part 1.0
+GitHub is a free hosting provider used for software development and distributed 'version control' of files and code. If you would like to use GitHub to track changes in your project you can follow these steps, or skip to part 1.0
 
-To use Github for this project you will need to:
+To use GitHub for this project you will need to:
 
-1. Create an account with Github (you can use your UAL address or a personal email).
-2. Download the github desktop application and log in.
+1. Create an account with GitHub (you can use your UAL address or a personal email).
+2. Download the GitHub desktop application and log in.
 3. Copy or 'clone' this project repository onto your computer from the application. By selecting `File > Clone Repository > URL` and pasting in the URL: https://github.com/jclarke-arts/are-you-a-robot
-4. Once you have made changes in your code, you can then 'upload' these to Github and share them with your team. To do this you will need to write a short summary of your changes, 'commit' these changes and 'push' them to your shared Github repository in the Github desktop app.
+4. Once you have made changes in your code, you can then 'upload' these to GitHub and share them with your team. To do this you will need to:
+   1. Write a short summary of your changes.
+   2. 'Commit' these changes to the 'main branch'.
+   3. 'Push' this 'commit' to your shared GitHub repository in the GitHub desktop app.
 
-### Option 2: Downloading from Github
+Don't worry too much about the specific terminology here (such as 'commit', 'push', etc) – the point is that using GitHub is a really powerful way to share code, and keep track of complex projects!
 
-If you do not wish to set up a Github account, you can download the files directly from this page (https://github.com/jclarke-arts/are-you-a-robot). To do this you will need to:
+### Option 2: Downloading from GitHub
+
+If you do not wish to set up a GitHub account, you can download the files directly from this page (https://github.com/jclarke-arts/are-you-a-robot). To do this you will need to:
 
 1. Click the green 'Code' button, and select 'Download ZIP'.
 2. Once the download is complete, you can unzip it with the project files ready to use.
@@ -103,7 +108,7 @@ If you are on a mac, you will be able to set up a local testing using a PHP or P
 1. Navigate to the `are-you-a-robot` folder stored on your computer.
 2. Right click the folder and select `Services > New Terminal at Folder`. This will open up a new window in the application 'Terminal' (on the line next to the cursor you will have something that looks like: `Jacks-MacBook-Pro:are-you-a-robot jackclarke$ `)
 
-At this stage, you will run a command to start your 'development server', this simply allows you to view your files (and changes) in the browser. You can do this using either `PHP` or `Python`, both of which come pre-installed on macOS – if one option doesn't work, try the other! If neither work, email me 🙂.
+At this stage, you can run a command to start your 'development server', this simply allows you to view your files (and changes) in the browser. You can do this using either `PHP` or `Python`, both of which come pre-installed on macOS – if one option doesn't work, try the other! If neither work, email me 🙂.
 
 To use **PHP** (recommended):
 
@@ -119,7 +124,7 @@ Once you are down quit your development server by simply closing the terminal wi
 
 #### Windows Users
 
-If you are on a Windows, you will be able to set up a local testing using a Node, PHP or Python server from the command line. In contrast to macOS, Windows does not come with these languages pre-installed so you will need to install one to set up a development server from the command line.
+If you are on a Windows, you will be able to set up a local testing server using Node, PHP or Python from the command line. In contrast to macOS, Windows does not come with these languages pre-installed so you will need to install one to get set up:
 
 To install **Node** (recommended) you will need to:
 
