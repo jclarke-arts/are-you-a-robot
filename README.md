@@ -15,7 +15,7 @@ This `README` is split into three sections, you can jump to whichever is relevan
 
 ### Option 1: Using GitHub for collaborative coding (Recommended)
 
-GitHub is a free hosting provider used for software development and distributed 'version control' of files and code. If you would like to use GitHub to track changes in your project you can follow these steps, or skip to part 1.0
+GitHub is a free hosting provider used for software development and distributed 'version control' of files and code. If you would like to use GitHub to track changes in your project you can follow these steps.
 
 To use GitHub for this project you will need to:
 
