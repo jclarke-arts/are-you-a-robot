@@ -1,4 +1,4 @@
-# Are you a robot?
+# Are You a Robot?
 
 A chatbot is a kind of software, written to facilitate or ‘simulate’ conversations between a computer program and a human-agent. A popular, flexible scripting language for producing this kind of software is ‘Rivescript’ which you will be using to write your chatbots.
 
@@ -61,7 +61,7 @@ To do this you will need to navigate to the extensions tab by selecting `View > 
 
 To use the 'Live Server' extension that will allow you to view your project in the browser you will need to:
 
-1. Search the marketplace for `Live Server` – a few options will appear but the correct one has over 11+ million downloads.
+1. Search the VSC marketplace for `Live Server` – a few options will appear but the correct one has over 11+ million downloads.
 2. Click the green 'install' button and restart the application (open and close).
 3. Once you have opened the `are-you-a-robot` folder again, select the `index.html` file.
 4. In the bottom right of the screen, select the 'Go Live' button. This should automatically open a window in your default browser with your project, ready to go!
@@ -70,7 +70,7 @@ To use the 'Live Server' extension that will allow you to view your project in t
 
 To use the 'Live Share' extension that will allow you to share an editing-session with collaborators (similar to Google docs), you will need to:
 
-1. Search the marketplace for `Live Share` – a few options will appear but the correct one has over 4+ million downloads.
+1. Search the VSC marketplace for `Live Share` – a few options will appear but the correct one has over 4+ million downloads.
 2. Click the green 'install' button.
 3. Click the 'Live Share' button at the bottom left of the screen and authenticate (log in) using either GitHub (recommended) or your UAL email address.
 4. Once authenticated you can use the 'Live Share' button to recieve a URL that will look like this: `https://prod.liveshare.vsengsaas.visualstudio.com/join?B9EAF2D227AECD2517A0C2953FF7149C67A1`
@@ -78,7 +78,11 @@ To use the 'Live Share' extension that will allow you to share an editing-sessio
 
 ##### Rivescript syntax highlighting
 
-To add 'syntax' highlighting for
+To add 'syntax' highlighting for your `.rive` files you need to:
+
+1. Search the VSC marketplace for `rivescript` – there will be two options, in my experience the 'RiveScript Language Support' extension by 'kjleitz' is best but both work!
+2. Click on the appropriate extension and then the green 'install' button.
+3. Return to your `.rive` file in `/brain` folder and see your file with syntax highlighting!
 
 ## Manual Project Setup
 
@@ -137,3 +141,25 @@ Once you are all set up you can now _edit your chatbot!_ To do this you will nee
 1. Overwrite the `.rive` files in the `/brain` folder with new Rivescript code. Remember to [look at the documentation](https://www.rivescript.com/docs/tutorial) if you can't remember how to do something!
 2. Once overwritten, go to your development website (most likely [http://localhost:8000](http://locahost:8000)) and refresh the page. Your changes should now be implemented in your chatbot! If not, try a 'hard refresh' – this can be done in most browsers, by pressing `Cmd/Ctrl + Shift + R` instead of just `Cmd/Ctrl + R`.
 3. Repeat! 🔁
+
+### Resources
+
+Remember there are **technical resources** to help you when editing your chatbot, such as:
+
+- [The Official Rivescript Playground](https://play.rivescript.com/)
+- [The Rivescript Documentation](https://www.rivescript.com/docs/tutorial)
+- [The Coding Train Tutorial](https://thecodingtrain.com/learning/programming-with-text/10.1-introduction.html)
+
+There are also plenty of **contextual resources** to help you generate ideas!
+
+- [Zeros + Ones, Sadie Plant](https://monoskop.org/File:Plant_Sadie_Zeros_and_Ones_Digital_Women_and_the_New_Technoculture_1997.pdf)
+
+- [How We Became Posthuman, N. Katherine Hayles](https://monoskop.org/File:Hayles_N_Katherine_How_We_Became_Posthuman_Virtual_Bodies_in_Cybernetics_Literature_and_Informatics.pdf)
+
+- [If This Toaster Could Talk, Alexis Lloyd](https://www.theatlantic.com/technology/archive/2013/09/if-this-toaster-could-talk/279276/)
+
+- [Action to Surface, Tereza Rullerova](https://www.therodina.com/action-to-surface/)
+
+- [The Domino Effect, David Rudin](https://reallifemag.com/the-domino-effect/)
+
+- [A Chatroom is Worth a Thousand Words, Skawennati Tricia Fragnito](
