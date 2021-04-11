@@ -20,14 +20,27 @@ GitHub is a free hosting provider used for software development and distributed 
 To use GitHub for this project you will need to:
 
 1. Create an account with GitHub (you can use your UAL address or a personal email).
-2. Download the GitHub desktop application and log in.
-3. Copy or 'clone' this project repository onto your computer from the application. By selecting `File > Clone Repository > URL` and pasting in the URL: https://github.com/jclarke-arts/are-you-a-robot
-4. Once you have made changes in your code, you can then 'upload' these to GitHub and share them with your team. To do this you will need to:
-   1. Write a short summary of your changes.
-   2. 'Commit' these changes to the 'main branch'.
-   3. 'Push' this 'commit' to your shared GitHub repository in the GitHub desktop app.
+2. Log in, navigate back to the [project repository](https://github.com/jclarke-arts/are-you-a-robot). 
+3. Now you can 'fork' the project by clicking 'Fork' in the top right corner. This will allow you to modify code and share the codebase with your teammates. To do this you will need to:
+   1. First nominate a member of the group to 'fork' the repository who will be 'in charge' of the codebase. This will create a new page with the title '`your-username/are-you-a-robot`' rather than`jclarke-arts/are-you-a-robot`
+   2. Once forked, go the 'Settings' of your new respository page and select 'Manage access' (you may need to provde you password again here, but that's fine 🙂).
+   3. Search for your teammates and invite them to the project!
 
-Don't worry too much about the specific terminology here (such as 'commit', 'push', etc) – the point is that using GitHub is a really powerful way to share code, and keep track of complex projects!
+Now that you have forked the repository, you have a codebase which is yours to edit, adapt and recode! From here, you will need to go through a few more steps to make local changes and keep them in-sync with the group:
+
+1. Download the [GitHub desktop application](https://desktop.github.com/) and log in with your new GitHub account.
+2. Go back to the 'forked' repository you just made in the browser, click the green 'Code' button and select 'Open with GitHub Desktop' – this will open the GitHub desktop app. 
+3. Here you can select a folder on your computer to store the files! 🥳
+
+Once you have made changes in your code, you can then 'upload' these to GitHub and share them with your team. To do this you will need to:
+
+1. Write a short summary of your changes.
+2. 'Commit' these changes to the 'main branch'.
+3. 'Push' this 'commit' to your shared GitHub repository in the GitHub desktop app by clicking **Push origin** 
+
+Now all of your teammates can see your changes! 🤯 So, whenever you start making changes yourself, you can click **fetch origin** and it will download any changes to the code your team has made! 
+
+Note: Don't worry too much about the specific terminology here (such as 'commit', 'push', etc) – the point is that using GitHub is a really powerful way to share code, and keep track of complex projects! 
 
 ### Option 2: Downloading from GitHub
 
