@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+
+* {
+  font-family: "Inter", Arial;
+  font-size: 12pt;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+.title {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1 {
+  letter-spacing: 0.75px;
+  color: blueviolet;
+}
+
+.wrapper {
+  height: 95vh;
+}
+
+.chat {
+  background: white;
+  box-shadow: 10px 10px 0px blueviolet;
+  overflow: scroll;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0px 20px;
+  border-radius: 10px;
+}
+
+.messages {
+  flex: 1 0 auto;
+}
+
+.messages div {
+  max-width: 60%;
+  width: fit-content;
+  display: block;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 7px;
+  white-space: pre-line;
+}
+
+.messages div a {
+  color: white;
+}
+
+.messages div a:hover {
+  color: blueviolet;
+}
+
+.messages .bot {
+  text-align: left;
+  margin-right: auto;
+  background: black;
+  color: white;
+}
+
+.messages .self {
+  text-align: right;
+  margin-right: 20px;
+  margin-left: auto;
+  background: white;
+  border: 1px solid blueviolet;
+  color: blueviolet;
+}
+
+.actions {
+  flex-shrink: 0;
+  width: 100%;
+  position: sticky;
+  bottom: -1px;
+  padding: 10px 0px 20px;
+  background: white;
+}
+
+.actions input {
+  height: 30px;
+  display: block;
+  width: 100%;
+  outline: 0;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid black;
+  border-left: 0px;
+}
+
+input:focus {
+  border-bottom: 2px solid blueviolet;
+}
+
+@media all and (min-width: 720px) {
+  .wrapper {
+    width: 40vw;
+    height: 90vh;
+    margin: 0 auto 2.5vh;
+  }
+}
+
+@media all and (min-width: 1280px) {
+  .wrapper {
+    width: 27.5vw;
+  }
+  .title {
+    height: 7.5vh;
+  }
+}
