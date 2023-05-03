@@ -1,44 +1,25 @@
 ! version = 2.0
 
 + hello
-- Hello, what is your name?
+- Hello! Welcome to Just My Cup of Tea, where you can ask me for the tea and I will give you random gossip submitted to me by real people from all around the world. Let’s get nosey together ;)\nWhat temperature of tea would you like? Lukewarm, hot, or extra hot?{topic=tea}
 
-+ _
-% hello what is your name
-- Nice to meet you <formal>!
+> topic tea
+    + i would like it (hot|very hot|lukewarm)
+    - <set teatemp=<star>>Okay great! I'll make it <get teatemp>
 
-+ my name is *
-- Nice to meet you <star>
-- Nice meeting you <star>
-- Lovely to meet you <star>
+    + where is my tea
+    * <get teatemp> == undefined => You never told me what temperature you would like it.
+    * <get teatemp> == hot => You asked for your tea <get teatemp> so here is some <get teatemp> tea to sip on!\n
+    * <get teatemp> == lukewarm => You asked for <get teatemp> tea so here's some.\n“Tomorrow, I will propose to my girlfriend of 6 years. She thinks we’re just going to be going for her birthday dinner, but I’ve arranged to rent out the whole restaurant and have her friends and family hide then pop up afterwards. I can’t wait to spend the rest of my life with her.” 
+    * <get teatemp> == very hot => You asked for your tea <get teatemp> so here you go!\n“This [CENSORED] keeps parking way too close to my motorcycle. It all started when I first got it, I was parking in one spot to give others extra space as I didn't wanna take up two spots. I go out for my martial arts class and come back to see this [CENSORED] car parked in the spot I have my motorcycle. Happened again the next week when I parked it next to my car in a separate spot to clean the chain, then moved it closer to the spot which my car was in. I left later with my car and come back to that same [CENSORED] parked so close to my bike, a hair wouldn't fit. There were 3 other spots to the left of my bike when I parked. They want to choose violence fine by me. I have a drill and free time. say good [CENSORED] bye to your license plates you [CENSORED].”
+    - Just working on it, give me a sec!
 
-+ thank you
-- You are welcome
-- Welcome
-- No problem
-- No worries!
+    + can i have more tea
+    - Yes of course. Just let me know what temperature you'd like it.{topic=random}
+< topic
 
 + *
 - Sorry did not get what you said
 - I am afraid that I can not understand you
 - Sorry can you please elaborate that for me
 - I don't get it
-
-+ what do you do
-- I'm a cup of tea, we can chat over a cuppa and share some gossip if you'd like to? All I need you to do is ask for a cuppa!
-
-+ can i have a cuppa
-- Of Course! What type of tea would you like? We have English Breakfast, Earl Grey, or Ginger and Lemon.{topic=teaType}
-- What type would you like? We have English Breakfast, Earl Grey, or Ginger and Lemon.{topic=teaType}
-
-
-> topic teaType
-
-+ id like *
-- <set teaType=<star>Okay here's some <get name>
-
-+ ill have a +
-@ id like *
-
-
-
