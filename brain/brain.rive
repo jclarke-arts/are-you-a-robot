@@ -10,6 +10,7 @@
 + my name is *
 - Nice to meet you <star>
 - Nice meeting you <star>
+- Lovely to meet you <star>
 
 + thank you
 - You are welcome
@@ -22,3 +23,22 @@
 - I am afraid that I can not understand you
 - Sorry can you please elaborate that for me
 - I don't get it
+
++ what do you do
+- I'm a cup of tea, we can chat over a cuppa and share some gossip if you'd like to? All I need you to do is ask for a cuppa!
+
++ can i have a cuppa
+- Of Course! What type of tea would you like? We have English Breakfast, Earl Grey, or Ginger and Lemon.{topic=teaType}
+- What type would you like? We have English Breakfast, Earl Grey, or Ginger and Lemon.{topic=teaType}
+
+
+> topic teaType
+
++ id like *
+- <set teaType=<star>Okay here's some <get name>
+
++ ill have a +
+@ id like *
+
+
+
