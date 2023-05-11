@@ -1,21 +1,99 @@
 ! version = 2.0
 
-+ hello
-- Hello! Welcome to Just My Cup of Tea, where you can ask me for the tea and I will give you random gossip submitted to me by real people from all around the world. Let’s get nosey together ;)\nWhat temperature of tea would you like? Lukewarm, hot, or extra hot?{topic=tea}
+> begin
+
+  + request
+  * <get met> == undefined => <set met=true>{topic=new_user}{ok}
+  - {ok}
+
+< begin
+
+> topic new_user
+    + (hi|hello|hey)
+    - Hello!\n\nWelcome to Just My Cup of Tea, where you can ask me for the tea and I will give you random gossip submitted to me by real people from all around the world. Let’s get nosey together ;)
+    ^ \nWhat is your name?{topic=asked_name}
+
+    + what is your name
+    - I'm Just my Cup of Tea, your nearly walking, mostly talking and generally warming friend.
+    ^ What is your name?{topic=asked_name}
+
+    + who are you
+    @ what is your name
+< topic
+
+> topic asked_name
+    + #
+    - Your name is a number?{topic=temperature}
+
+    + *
+    - Okay, I'm trusting that that's your real name.
+    ^ \nWould you like some tea?{topic=temperature}
+
+    + (i am|my name is) _ _
+    - I only want your first name.
+    ^ \nWould you like some tea?{topic=temperature}
+
+    + (i am|my name is) *
+    - <set name=<star2>>Nice to meet you, <get name>!{topic=random}
+    ^ \nWould you like some tea?{topic=temperature}
+< topic
+    
+> topic temperature
+    + [*] (tea|yes) [*]
+    - Yes of course, tea! How hot do you like it? Lukewarm, Hot, or Very Hot?{topic=tea}
+
+    + [*] no [*]
+    - That's a shame, I guess I'll have to go and find the Microwave. Bye for now!
+< topic
 
 > topic tea
     + i would like it (hot|very hot|lukewarm)
     - <set teatemp=<star>>Okay great! I'll make it <get teatemp>
 
-    + where is my tea
-    * <get teatemp> == undefined => You never told me what temperature you would like it.
-    * <get teatemp> == hot => You asked for your tea <get teatemp> so here is some <get teatemp> tea to sip on!\n
-    * <get teatemp> == lukewarm => You asked for <get teatemp> tea so here's some.\n“Tomorrow, I will propose to my girlfriend of 6 years. She thinks we’re just going to be going for her birthday dinner, but I’ve arranged to rent out the whole restaurant and have her friends and family hide then pop up afterwards. I can’t wait to spend the rest of my life with her.” 
-    * <get teatemp> == very hot => You asked for your tea <get teatemp> so here you go!\n“This [CENSORED] keeps parking way too close to my motorcycle. It all started when I first got it, I was parking in one spot to give others extra space as I didn't wanna take up two spots. I go out for my martial arts class and come back to see this [CENSORED] car parked in the spot I have my motorcycle. Happened again the next week when I parked it next to my car in a separate spot to clean the chain, then moved it closer to the spot which my car was in. I left later with my car and come back to that same [CENSORED] parked so close to my bike, a hair wouldn't fit. There were 3 other spots to the left of my bike when I parked. They want to choose violence fine by me. I have a drill and free time. say good [CENSORED] bye to your license plates you [CENSORED].”
+    + [*] (hot|very hot|lukewarm) [*]
+    - <set teatemp=<star>>Okay great! I'll make it <get teatemp>
     - Just working on it, give me a sec!
 
+    + okay
+    * <get teatemp> == undefined => You never told me what temperature you would like it.
+    * <get teatemp> == lukewarm => You asked for <get teatemp> tea so here's some. Press enter when you're ready!{topic=lukewarm}
+    * <get teatemp> == hot => You asked for <get teatemp> tea so here's some. Press enter when you're ready!{topic=hot}
+    * <get teatemp> == very hot => You asked for <get teatemp> tea so here's some. Press enter when you're ready!{topic=extrahot}
+    - <set teatemp=<star>>Okay great! I'll make it <get teatemp>
+    - Just working on it, give me a sec!
+< topic
+
+> topic lukewarm
+    + *
+    % you asked for <get teatemp> tea so heres some press enter when you are ready
+    - “Tomorrow, I will propose to my girlfriend of 6 years. She thinks we’re just going to be going for her birthday dinner, but I’ve arranged to rent out the whole restaurant and have her friends and family hide then pop up afterwards. I can’t wait to spend the rest of my life with her.” 
+    - “I found a kitten on the side of the road today. My boyfriend doesn’t like cats so I’m hiding him in our spare bathroom, let’s hope he doesn’t go too crazy when he finds out sooner or later!” 
+    - “I’m going to run my first marathon, and my brother just completely ruined the surprise that my best friend was going to come and cheer for me during the race. It would’ve been so nice to see her while running and getting that surprise, and now I’m really mad at my stupid brother for ruining it.”
+
     + can i have more tea
-    - Yes of course. Just let me know what temperature you'd like it.{topic=random}
+    - Yes of course. Just let me know what temperature you'd like it.{topic=tea}
+< topic
+
+> topic hot
+    + *
+    % you asked for <get teatemp> tea so heres some press enter when you are ready
+    - “So it's been 5 years and Shawn still can't get over his ex. Whom has since moved on and married her best friend. He has gotten so bad he is essentially an incel now. It's ridiculous. He has also been asking everyone to set him up with their friends and gets mad. He needs to grow up.”
+    - “My best friend is making me play nice with her toxic boyfriend. She doesn’t want him to think I don’t like him… but I DON’T like him! And I want him to know it.”
+    - “This girl I was friends with decided to tell my boyfriend that I was cheating on him, a complete lie, because I left her on read. Complete unhinged behavior. She blocked me before I could even react like a total coward, and now goes around making up stories to everyone she meets about how SHE’S the victim.” 
+
+    + can i have more tea
+    - Yes of course. Just let me know what temperature you'd like it.{topic=tea}
+< topic
+
+> topic extrahot
+    + *
+    % you asked for <get teatemp> tea so heres some press enter when you are ready
+    - “This [CENSORED] keeps parking way too close to my motorcycle. It all started when I first got it, I was parking in one spot to give others extra space as I didn't wanna take up two spots. I go out for my martial arts class and come back to see this [CENSORED] car parked in the spot I have my motorcycle. Happened again the next week when I parked it next to my car in a separate spot to clean the chain, then moved it closer to the spot which my car was in. I left later with my car and come back to that same [CENSORED] parked so close to my bike, a hair wouldn't fit. There were 3 other spots to the left of my bike when I parked. They want to choose violence fine by me. I have a drill and free time. say good fucking bye to your license plates you [CENSORED].”
+    - “My brothers kid might not be his cause his baby mama baby-trapped him and wouldn’t let him get a DNA test even though she’s cheated on him multiple times. She also claims since she was still married to her ex at the time, that he couldn’t sign the birth certificate. So he’s taking care of a kid that might not be his and doesn’t have his last name. 3 years later they’re still together and even more toxic than before. She wears the pants in the relationship and he follows her like a lost puppy. He only contacts his family when he needs money and owes a lot of people money. They're both compulsive liars and spenders that they don’t even have their own place, they’re living with her family in another state. It doesn’t help they got kicked out of their first living arrangements cause of her other kids and him being a slob and not doing anything, completely taking over the house like it was their own. This is a reoccurring cycle that has been going on since both of them met. I should mention she gets a pension and they both work but are always broke yet have name brand stuff and are always going on vacations. Yet he always calls our parents for money but never to say hello. Its to the point my other siblings don’t want to message him cause their worried hell just ask for money instead ask how we’re doing.” 
+    - “I actually was malicious to my friend L, she went out with my first crush who I was heavily in love with and she knew it. She ended up saying yes to his request to go out. Not very friend like, right? I got distant with her but we were still in the same circle. So when she ended up with her new boyfriend I would find the personal things they didn’t want public and gossip about it, I also hacked into her YouTube and deleted all her videos and locked her out of her account.” 
+
+    + can i have more tea
+    - Yes of course. Just let me know what temperature you'd like it.{topic=tea}
 < topic
 
 + *
