@@ -41,3 +41,37 @@ function botReady() {
 function botNotReady(err) {
   console.log("An error has occurred.", err);
 }
+
+
+function teaSelectLukewarm() {
+  console.log("tea temperature selected as Lukewarm")
+  bot.reply("local-user", 'lukewarm')
+    .then(function (reply) {
+      botReply(reply);
+    })
+    .then(function () {
+      message_container.lastElementChild.scrollIntoView();
+    });
+}
+
+function teaSelectHot() {
+  console.log("tea temperature selected as Hot")
+  bot.reply("local-user", 'hot')
+  .then(function (reply) {
+    botReply(reply);
+  })
+  .then(function () {
+    message_container.lastElementChild.scrollIntoView();
+  });
+}
+
+function teaSelectExtraHot() {
+  console.log("tea temperature selected as Extra Hot")
+  bot.reply("local-user", 'extrahot')
+  .then(function (reply) {
+    botReply(reply);
+  })
+  .then(function () {
+    message_container.lastElementChild.scrollIntoView();
+  });
+}
