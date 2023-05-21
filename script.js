@@ -17,6 +17,8 @@ form.addEventListener("submit", (e) => {
   input_box.focus();
 });
 
+window.onload(input_box.focus());
+
 function botReply(message) {
   message_container.innerHTML += `<div class="bot">${message}</div>`;
 }
@@ -44,7 +46,8 @@ function botNotReady(err) {
 
 
 function teaSelectLukewarm() {
-  console.log("tea temperature selected as Lukewarm")
+  console.log("tea temperature selected as Lukewarm");
+  input_box.focus();
   bot.reply("local-user", 'lukewarm')
     .then(function (reply) {
       botReply(reply);
@@ -55,7 +58,8 @@ function teaSelectLukewarm() {
 }
 
 function teaSelectHot() {
-  console.log("tea temperature selected as Hot")
+  console.log("tea temperature selected as Hot");
+  input_box.focus();
   bot.reply("local-user", 'hot')
   .then(function (reply) {
     botReply(reply);
@@ -66,7 +70,8 @@ function teaSelectHot() {
 }
 
 function teaSelectExtraHot() {
-  console.log("tea temperature selected as Extra Hot")
+  console.log("tea temperature selected as Extra Hot");
+  input_box.focus();
   bot.reply("local-user", 'extrahot')
   .then(function (reply) {
     botReply(reply);
