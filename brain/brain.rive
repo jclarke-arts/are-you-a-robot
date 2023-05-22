@@ -22,6 +22,7 @@
     + who are you
     @ what is your name
 
+    //TESTING EASTER EGG
     + [*] favourite tea [*]
     - I'm my own favourite... it might be a mystery but if you guess the right tea then I might have a secret treat for you.{topic=favouriteTea}
     ^ \n\n<span class="action">There are only so many teas in the world so here's a list of the ones I like and you might find the secret!</span>
@@ -46,7 +47,7 @@
 
     + *
     - My bad I had a little malfunction, could you try that again for me?
-    - Sorry about this the hoover just tried to steal my socket. Bloody humans, eh? Give that another go!
+    - Sorry about this, the hoover just tried to steal my socket. Bloody humans, eh? Give that another go!
     ^ \n\n<span class="action">(Might of been a spelling mistake in there but if not, try saying your name with either a "I'm" or even just your name like a normal person.)</span>
 
     //TESTING EASTER EGG
@@ -79,18 +80,24 @@
     ^ \nWould you like some tea?{topic=temperature}
     ^ \n\n<span class="action">(Say "Yes" or "No" although I don't know what you are doing here if your not looking for some tea!)
 
+    + (okay|great|thanks|thank you|thankyou|i am ready|cool|sweet|ok|alright|all right|aight|say no more|wonderful|brilliant|brill)
+    - It's so lovely to meet you, hard to find a tea lover like myself. I'm very self-aware if you couldn't tell.
+    ^ \n\n(Try asking a question like, how are you? It might nice for me to get asked sometimes.)
+
     + *
     - My bad I had a little malfunction, could you try that again for me?
-    - Sorry about this the hoover just tried to steal my socket. Bloody humans, eh? Give that another go!
+    ^ \n\n(Try asking a question like, how are you? It might be nice to get asked sometimes.)
+    - Sorry about this, the hoover just tried to steal my socket. Bloody humans, eh? Give that another go!
     ^ \n\n(Try asking a question like, how are you? It might be nice to get asked sometimes.)
 < topic
 
 > topic temperature
     + [*] (tea|yes|yeah|please|okay|is it boiled|where is my tea) [*]
-    - Yes of course, tea! How hot do you like it? Lukewarm, Hot, or Very Hot?\n
+    - Yes of course, tea! How hot do you like it? Lukewarm, Hot, or Extra Hot?\n\n
     ^ <button onclick="teaSelectLukewarm()" class="selectionButton">Lukewarm</button>
     ^ <button onclick="teaSelectHot()" class="selectionButton">Hot</button>
     ^ <button onclick="teaSelectExtraHot()" class="selectionButton">Extra Hot</button>
+    ^ \n\n<span class="action">(These are buttons by the way! I'd of thought you'd be used to seeing buttons by this point with the current tech. Tututut.)
 
     + [*] lukewarm [*]
     - <set teatemp=<star>>You asked for lukewarm tea so I'll get to brewin'.{topic=lukewarm}
@@ -100,7 +107,7 @@
     - <set teatemp=<star>>You asked for hot tea so I'll get to brewin'.{topic=hot}
     ^ \n\n<span class="action">(Give us a minute here to get the tea ready. Just let us know when you're ready, okay? If you start asking questions I might just give up.)</span>
 
-    + [*] extrahot [*]
+    + [*] extra hot [*]
     - <set teatemp=<star>>You asked for extra hot tea so I'll get to brewin'.{topic=extrahot}
     ^ \n\n<span class="action">(Give us a minute here to get the tea ready. Just let us know when you're ready, okay? If you start asking questions I might just give up.)</span>
 
@@ -109,11 +116,21 @@
 
     + *
     - My bad I had a little malfunction, could you try that again for me?
-    - Sorry about this the hoover just tried to steal my socket. Bloody humans, eh? Give that another go!
+    ^ \n\n(Try asking a question like, how are you? It might be nice to get asked sometimes.)
+    - Sorry about this, the hoover just tried to steal my socket. Bloody humans, eh? Give that another go!
+    ^ \n\n(Try asking a question like, how are you? It might be nice to get asked sometimes.)
 < topic
 
 > topic lukewarm
-    + (okay|great|thanks|thank you|thankyou|i am ready|cool|sweet|ok)
+    + (okay|great|thanks|thank you|thankyou|i am ready|cool|sweet|ok|alright|all right|aight|say no more|wonderful|brilliant|brill)
+    - “Tomorrow, I will propose to my girlfriend of 6 years. She thinks we’re just going to be going for her birthday dinner, but I’ve arranged to rent out the whole restaurant and have her friends and family hide then pop up afterwards. I can’t wait to spend the rest of my life with her.” 
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+    - “I found a kitten on the side of the road today. My boyfriend doesn’t like cats so I’m hiding him in our spare bathroom, let’s hope he doesn’t go too crazy when he finds out sooner or later!” 
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+    - “I’m going to run my first marathon, and my brother just completely ruined the surprise that my best friend was going to come and cheer for me during the race. It would’ve been so nice to see her while running and getting that surprise, and now I’m really mad at my stupid brother for ruining it.”
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+
+    + [*] ready [*]
     - “Tomorrow, I will propose to my girlfriend of 6 years. She thinks we’re just going to be going for her birthday dinner, but I’ve arranged to rent out the whole restaurant and have her friends and family hide then pop up afterwards. I can’t wait to spend the rest of my life with her.” 
     ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
     - “I found a kitten on the side of the road today. My boyfriend doesn’t like cats so I’m hiding him in our spare bathroom, let’s hope he doesn’t go too crazy when he finds out sooner or later!” 
@@ -125,8 +142,11 @@
     - You can't have your tea more than one temperature! You might not get any more if you keep pushing my buttons.{topic=temperature}
 
     + [*] tea [*]
-    - Yes of course. Just let me know what temperature you'd like it.{topic=temperature}
-    ^ \n\n<span class="action">(Say "Where's my tea?" or "Is it boiled?" to select a temperature for your second cup of tea, you greedy guzzler.)</span>
+    - Yes of course. I thought I already one on the go, oh well. If you'd like another tea you can just ask for one.{topic=temperature}
+    ^ \n\n<span class="action">(Say "Where's my tea?" or "Is it boiled?" to select a temperature for your second cup of tea, you greedy guzzler. You can also just say "I'd like it _______" c'mon now!)</span>
+
+    + _
+    - I didn't know humans were so smart, try again with a one word answer for that. Can't be that complicated to just say "I'm ready" can it? Go on, just say it now if still want a cuppa.
 
     + *
     - <set response="star">I know right! It's crazy, '<star>', couldn't of put it better myself!
@@ -135,7 +155,7 @@
 < topic
 
 > topic hot
-    + (okay|great|thanks|thank you|thankyou)
+    + (okay|great|thanks|thank you|thankyou|i am ready|cool|sweet|ok|alright|all right|aight|say no more|wonderful|brilliant|brill)
     - “So it's been 5 years and Shawn still can't get over his ex. Whom has since moved on and married her best friend. He has gotten so bad he is essentially an incel now. It's ridiculous. He has also been asking everyone to set him up with their friends and gets mad. He needs to grow up.”
     ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
     - “My best friend is making me play nice with her toxic boyfriend. She doesn’t want him to think I don’t like him… but I DON’T like him! And I want him to know it.”
@@ -143,12 +163,20 @@
     - “This girl I was friends with decided to tell my boyfriend that I was cheating on him, a complete lie, because I left her on read. Complete unhinged behavior. She blocked me before I could even react like a total coward, and now goes around making up stories to everyone she meets about how SHE’S the victim.” 
     ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
 
+    + [*] ready [*]
+    - “Tomorrow, I will propose to my girlfriend of 6 years. She thinks we’re just going to be going for her birthday dinner, but I’ve arranged to rent out the whole restaurant and have her friends and family hide then pop up afterwards. I can’t wait to spend the rest of my life with her.” 
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+    - “I found a kitten on the side of the road today. My boyfriend doesn’t like cats so I’m hiding him in our spare bathroom, let’s hope he doesn’t go too crazy when he finds out sooner or later!” 
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+    - “I’m going to run my first marathon, and my brother just completely ruined the surprise that my best friend was going to come and cheer for me during the race. It would’ve been so nice to see her while running and getting that surprise, and now I’m really mad at my stupid brother for ruining it.”
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+
     + (lukewarm|extra hot)
     - You can't have your tea more than one temperature! You might not get any more if you keep pushing my buttons.{topic=temperature}
 
     + [*] tea [*]
     - Yes of course. Just let me know what temperature you'd like it.{topic=temperature}
-    ^ \n\n<span class="action">(Say "Where's my tea?" or "Is it boiled?" to select a temperature for your second cup of tea, you greedy guzzler.)</span>
+    ^ \n\n<span class="action">(Say "Where's my tea?" or "Is it boiled?" to select a temperature for your second cup of tea, you greedy guzzler. You can also just say "I'd like it _______" c'mon now!)</span>
 
     + *
     - I know right! I never knew people's lives could be so interesting!
@@ -157,7 +185,7 @@
 < topic
 
 > topic extrahot
-    + (okay|great|thanks|thank you|thankyou)
+    + [*] (okay|great|thanks|thank you|thankyou|i am ready|cool|sweet|ok|alright|all right|aight|say no more|wonderful|brilliant|brill) [*]
     - “This [CENSORED] keeps parking way too close to my motorcycle. It all started when I first got it, I was parking in one spot to give others extra space as I didn't wanna take up two spots. I go out for my martial arts class and come back to see this [CENSORED] car parked in the spot I have my motorcycle. Happened again the next week when I parked it next to my car in a separate spot to clean the chain, then moved it closer to the spot which my car was in. I left later with my car and come back to that same [CENSORED] parked so close to my bike, a hair wouldn't fit. There were 3 other spots to the left of my bike when I parked. They want to choose violence fine by me. I have a drill and free time. say good fucking bye to your license plates you [CENSORED].”
     ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
     - “My brothers kid might not be his cause his baby mama baby-trapped him and wouldn’t let him get a DNA test even though she’s cheated on him multiple times. She also claims since she was still married to her ex at the time, that he couldn’t sign the birth certificate. So he’s taking care of a kid that might not be his and doesn’t have his last name. 3 years later they’re still together and even more toxic than before. She wears the pants in the relationship and he follows her like a lost puppy. He only contacts his family when he needs money and owes a lot of people money. They're both compulsive liars and spenders that they don’t even have their own place, they’re living with her family in another state. It doesn’t help they got kicked out of their first living arrangements cause of her other kids and him being a slob and not doing anything, completely taking over the house like it was their own. This is a reoccurring cycle that has been going on since both of them met. I should mention she gets a pension and they both work but are always broke yet have name brand stuff and are always going on vacations. Yet he always calls our parents for money but never to say hello. Its to the point my other siblings don’t want to message him cause their worried hell just ask for money instead ask how we’re doing.” 
@@ -165,15 +193,23 @@
     - “I actually was malicious to my friend L, she went out with my first crush who I was heavily in love with and she knew it. She ended up saying yes to his request to go out. Not very friend like, right? I got distant with her but we were still in the same circle. So when she ended up with her new boyfriend I would find the personal things they didn’t want public and gossip about it, I also hacked into her YouTube and deleted all her videos and locked her out of her account.” 
     ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
 
+    + [*] ready [*]
+    - “Tomorrow, I will propose to my girlfriend of 6 years. She thinks we’re just going to be going for her birthday dinner, but I’ve arranged to rent out the whole restaurant and have her friends and family hide then pop up afterwards. I can’t wait to spend the rest of my life with her.” 
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+    - “I found a kitten on the side of the road today. My boyfriend doesn’t like cats so I’m hiding him in our spare bathroom, let’s hope he doesn’t go too crazy when he finds out sooner or later!” 
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+    - “I’m going to run my first marathon, and my brother just completely ruined the surprise that my best friend was going to come and cheer for me during the race. It would’ve been so nice to see her while running and getting that surprise, and now I’m really mad at my stupid brother for ruining it.”
+    ^ \n\n<span class="action">(Tell us what you think of that! Pretty crazy right? If you'd like another cuppa then just ask for another cup of tea!)</span>
+
     + (lukewarm|extra hot)
     - You can't have your tea more than one temperature! You might not get any more if you keep pushing my buttons.{topic=temperature}
 
     + [*] tea [*]
     - Yes of course. Just wait for the kettle to boil and I'll get back to you.{topic=temperature}
-    ^ \n\n<span class="action">(Say "Where's my tea?" or "Is it boiled?" to select a temperature for your second cup of tea, you greedy guzzler.)</span>
+    ^ \n\n<span class="action">(Say "Where's my tea?" or "Is it boiled?" to select a temperature for your second cup of tea, you greedy guzzler. You can also just say "I'd like it _______" c'mon now!)</span>
 
     + *
-    - I know right! That's some serious dirt right there!
+    - I know... That's some serious dirt right there!
     ^ \nWould you like another cuppa??{topic=temperature}
 
 < topic

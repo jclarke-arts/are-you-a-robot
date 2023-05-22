@@ -40,7 +40,7 @@ body {
   height: 70vh;
   display: flex;
   flex-direction: column;
-  padding: 60px 20px 50px 20px;
+  padding: 60px 22px 50px 18px;
   border-radius: 1rem;
 }
 
@@ -53,7 +53,7 @@ body {
   width: fit-content;
   display: block;
   margin: 5px;
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
   border-radius: 7px;
   white-space: pre-line;
 }
@@ -63,7 +63,7 @@ body {
 }
 
 .messages div a:hover {
-  color: rgb(134, 0, 114);
+  color: rgb(0, 0, 0);
 }
 
 .messages .bot {
@@ -78,11 +78,10 @@ body {
 
 .messages .self {
   text-align: right;
-  margin-right: 20px;
   margin-left: auto;
   background: white;
-  border: 1px solid rgb(134, 0, 114);
-  color: rgb(134, 0, 114);
+  border: 1px solid #D39F56;
+  color: #D39F56;
   font-family: "freight-sans-pro", sans-serif;
   font-weight: 400;
   font-style: normal;

@@ -48,6 +48,7 @@ function botNotReady(err) {
 function teaSelectLukewarm() {
   console.log("tea temperature selected as Lukewarm");
   input_box.focus();
+  document.body.style.backgroundImage = 'url("./assets/Background-01.png")';
   bot.reply("local-user", 'lukewarm')
     .then(function (reply) {
       botReply(reply);
@@ -60,6 +61,7 @@ function teaSelectLukewarm() {
 function teaSelectHot() {
   console.log("tea temperature selected as Hot");
   input_box.focus();
+  document.body.style.backgroundImage = 'url("./assets/Background-02.png")';
   bot.reply("local-user", 'hot')
   .then(function (reply) {
     botReply(reply);
@@ -72,6 +74,7 @@ function teaSelectHot() {
 function teaSelectExtraHot() {
   console.log("tea temperature selected as Extra Hot");
   input_box.focus();
+  document.body.style.backgroundImage = 'url("./assets/Background-03.png")';
   bot.reply("local-user", 'extrahot')
   .then(function (reply) {
     botReply(reply);
